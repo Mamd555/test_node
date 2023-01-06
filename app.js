@@ -1,8 +1,12 @@
 // define import express
 const express = require ('express');
 const app = express();
+const dotenv = require('dotenv').config()
+//console.log(dotenv.parsed);
 // define port
-const port = 3000;
+const PORT = process.env.PORT || 3000;
+
+
 // define router frome route
 const productsRouter = require('./route/products');
 const req = require('express/lib/request');
@@ -16,9 +20,16 @@ const cors = require ("cors");
 // connection on mongoAtlass
 mongoose.set('strictQuery', false);
 // set connection url mongo db atlas and change user name
-const connection = "mongodb+srv://mamdouh:mamdouh@cluster0.j6o8owp.mongodb.net/?retryWrites=true&w=majority";
+//const connection = process.env.
 // connect on url and test
-mongoose.connect( connection,{useNewUrlParser: true},
+mongoose.connect(process.env.MONGODB_URI,
+    {
+       dbName:process.env.DB_NAME ,
+       user:process.env.DB_USER,
+       pass:process.env.DB_PASS,
+       useUnifiedTopology:true,
+        useNewUrlParser: true,
+},
 ).then(() => console.log("Database Connected Successfully"))
 
 .catch((err) => console.log(err));
@@ -32,7 +43,7 @@ app.use([
 app.use(cors());
 app.use('/products',productsRouter)
 
-app.listen(port,()=>{
-    console.log("it's working");
+app.listen(PORT,()=>{
+    console.log("it's working' " + PORT + ' ...welcome');
 })
 module.exports = app;
