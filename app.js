@@ -4,7 +4,7 @@ const app = express();
 const dotenv = require('dotenv').config()
 //console.log(dotenv.parsed);
 // define port
-const PORT =  3000;
+const PORT =  8080;
 
 
 // define router frome route
