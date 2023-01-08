@@ -4,7 +4,7 @@ const app = express();
 const dotenv = require('dotenv').config()
 //console.log(dotenv.parsed);
 // define port
-const PORT =  process.env.PORT || 3000;
+const PORT =  process.env.PORT ||3005;
 
 
 // define router frome route
@@ -42,6 +42,7 @@ app.use([
 ])
 app.use(cors());
 app.use('/products',productsRouter)
+
 
 app.listen(PORT,()=>{
     console.log("it's working' " + PORT + ' ...welcome');
