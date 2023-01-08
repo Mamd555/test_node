@@ -37,11 +37,12 @@ mongoose.connect(process.env.MONGODB_URI,
 
 // use to make any operations on any imports module 
 // hear type medlewears
+app.use(cors());
 app.use([
     bodyParser.urlencoded({extended : true},express.json())
-])
-app.use(cors());
-app.use('/products',productsRouter)
+]);
+
+app.use('/products',productsRouter);
 
 
 app.listen(PORT,()=>{
