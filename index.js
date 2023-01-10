@@ -4,7 +4,7 @@ const app = express();
 const dotenv = require('dotenv').config()
 //console.log(dotenv.parsed);
 // define port
-const PORT =  process.env.PORT ||3005;
+const PORT =  parseInt(process.env.PORT) || 3005;
 
 
 // define router frome route

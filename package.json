@@ -6,8 +6,8 @@
   "scripts": {
     "start": "nodemon app.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Google LLC",
+  "license": "Apache-2.0",
   "dependencies": {
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
