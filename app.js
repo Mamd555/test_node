@@ -42,7 +42,7 @@ app.use([
     bodyParser.urlencoded({extended : true},express.json())
 ]);
 
-app.use('/products',productsRouter);
+app.use('/products',productsRouter)
 
 
 app.listen(PORT,()=>{
