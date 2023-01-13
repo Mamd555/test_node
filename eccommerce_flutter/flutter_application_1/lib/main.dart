@@ -1,9 +1,12 @@
+
+// ignore_for_file: unused_import
+
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:json_annotation/json_annotation.dart';
 
 import 'logic/api.dart';
 import 'modle/modle.dart';
@@ -34,7 +37,7 @@ class _ProductsState extends State<Products> {
           title: Text("My products"),
         ),
         body: FutureBuilder<Productfetch>(
-            future: productapi.getData(context),
+            future: Productapi.getData(context),
             builder: (context, snapshot) {
               return ListView.builder(
                   itemCount: snapshot.data!.result!.length,

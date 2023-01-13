@@ -1,12 +1,12 @@
 import 'package:flutter/widgets.dart';
-
 import '../modle/modle.dart';
 import 'package:http/http.dart'as http ;
 import 'dart:convert';
-import 'package:json_annotation/json_annotation.dart';
+import 'dart:html';
 
 
-  class productapi{
+
+  class Productapi{
    static Future<Productfetch> getData(BuildContext context)  async {
   
   var res = await http.get(Uri.parse('https://test-node-jxtl13bh6-mamd555.vercel.app/products'));
