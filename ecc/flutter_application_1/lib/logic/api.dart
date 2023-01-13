@@ -6,7 +6,7 @@ import '../modle/modle.dart';
 class Productapi{
    static Future<Result> getData(BuildContext context)  async {
   
-  var res = await http.get(Uri.parse('https://test-node-jxtl13bh6-mamd555.vercel.app/products'));
+  var res = await http.get(Uri.parse('https://test-node-bn1j.vercel.app/products'));
 var data = jsonDecode(res.body.toString());
   if (res.statusCode == 200) {
     // If the server did return a 200 OK response,
