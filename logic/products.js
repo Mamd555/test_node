@@ -12,7 +12,7 @@ module.exports = {
                     id: res.id,
                     name: res.name,
                     desc: res.desc,
-                    price: res.price
+                    price: res.price,
                 }
             })
         })
