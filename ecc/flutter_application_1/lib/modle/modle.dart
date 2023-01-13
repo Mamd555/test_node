@@ -5,7 +5,7 @@ class Result {
     String? id;
     String? name;
     String? desc;
-    String? price;
+    int? price;
 
     List<Result>? result;
 
