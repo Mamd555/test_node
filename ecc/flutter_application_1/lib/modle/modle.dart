@@ -9,7 +9,7 @@ class Result {
 
     List<Result>? result;
 
-    Result({this.id,this.price, this.name, this.desc,this.result});
+    Result(String Function() data, {this.id,this.price, this.name, this.desc,this.result});
 
     Result.fromJson(Map<String, dynamic> json) {
         id = json["id"];
