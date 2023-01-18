@@ -39,7 +39,7 @@ mongoose.connect(process.env.MONGODB_URI,
 // hear type medlewears
 app.use(cors());
 app.use([
-    bodyParser.urlencoded({extended : true},express.json())
+    bodyParser.urlencoded({extended : true},express.json(),cors(),express.urlencoded({extended : true}))
 ]);
 
 app.use('/products',productsRouter)
