@@ -18,14 +18,17 @@ class _InserProductState extends State<InserProduct> {
   TextEditingController name = TextEditingController();
   TextEditingController desc = TextEditingController();
   TextEditingController price = TextEditingController();
+   late Map<String,dynamic> data;
    Future<Result> PostData(BuildContext context)  async {
   
   var res = await http.post(Uri.parse('https://test-node-bn1j.vercel.app/products'),
    body: {"name" : name.text ,"desc":desc.text,"price":price.text},
    headers: {"Content-Type":"application/x-www-form-urlencoded"}
   );
+this.setState(() {
+   data = jsonDecode(res.body.toString());
+});
 
-var data = jsonDecode(res.body.toString());
   if (res.statusCode == 200) {
     // If the server did return a 200 OK response,
 return Result.fromJson(data);
@@ -36,6 +39,11 @@ return Result.fromJson(data);
    return Result.fromJson(data);
   }
 
+   }
+     @override
+   void initStatPe() {
+     super.initState();
+     this.PostData(context);
    }
   @override
   Widget build(BuildContext context) {
