@@ -9,12 +9,17 @@ const PORT =  parseInt(process.env.PORT) || 3005;
 
 // define router frome route
 const productsRouter = require('./route/products');
+const conctsRouter = require ('./route/conctsRouter');
+const AuthRouter = require ('./route/authRoute');
+const user_check = require ('./auth_meddleware/verify_users');
+const admin_check = require ('./auth_meddleware/verify_admin');
 const req = require('express/lib/request');
 const res = require('express/lib/response');
 const bodyParser = require('body-parser')
 // define import mongoose
 const mongoose = require('mongoose');
 // we install cors to get api frome any device
+
 const cors = require ("cors");
 
 // connection on mongoAtlass
@@ -41,8 +46,13 @@ app.use(cors());
 app.use([
     bodyParser.urlencoded({extended : true},express.json(),cors(),express.urlencoded({extended : true}))
 ]);
+// medilwear route
 
-app.use('/products',productsRouter)
+app.use('/products',productsRouter);
+app.use('/auth',AuthRouter);
+app.get('/contacts',user_check);
+app.post('/contacts',admin_check);
+app.use('/contacts',conctsRouter);
 
 
 app.listen(PORT,()=>{

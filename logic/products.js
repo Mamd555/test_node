@@ -1,3 +1,4 @@
+const express = require ('express');
 // هنا بنفصل عمليات الأرسال والطلب والحذف كوظائف بنعملها على الدتا بيس
 // module.exports to send this function from this module to app.js or any module
 const PRODUCTS = require('../model/products');
