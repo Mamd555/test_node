@@ -51,7 +51,8 @@ app.use([
 app.use('/products',productsRouter);
 app.use('/auth',AuthRouter);
 app.get('/contacts',user_check);
-app.post('/contact',admin_check);
+app.post('/contacts',admin_check);
+app.get('/contact',admin_check);
 app.use('/contacts',ConctsRouter);
 
 
