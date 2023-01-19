@@ -9,7 +9,7 @@ const PORT =  parseInt(process.env.PORT) || 3005;
 
 // define router frome route
 const productsRouter = require('./route/products');
-const conctsRouter = require ('./route/conctsRouter');
+const ConctsRouter = require ('./route/contactsRouter');
 const AuthRouter = require ('./route/authRoute');
 const user_check = require ('./auth_meddleware/verify_users');
 const admin_check = require ('./auth_meddleware/verify_admin');
@@ -52,7 +52,7 @@ app.use('/products',productsRouter);
 app.use('/auth',AuthRouter);
 app.get('/contacts',user_check);
 app.post('/contacts',admin_check);
-app.use('/contacts',conctsRouter);
+app.use('/contacts',ConctsRouter);
 
 
 app.listen(PORT,()=>{
