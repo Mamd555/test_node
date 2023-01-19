@@ -87,6 +87,14 @@ return res.status(401).json({
                         name:user[0].name
                         // "USER" is secret_key or you can type any secret key "user121211**212#"
                     },"ADMIN");
+                    return res.status(200).json({
+                        message: "admin success",
+                        email: user[0].email,
+                        id: user[0]._id,
+                        token: token,
+                        name : user[0].name,
+                        type: user[0].type,
+                      });
                  }
                 }
             } 
