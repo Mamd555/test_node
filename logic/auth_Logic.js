@@ -29,7 +29,7 @@ module.exports = {
                     res.json({
                         massage:'create user successfully',
                         email : auth.email,
-                        password : auth.hash,
+                        password : auth.password,
                         type:auth.type
                     })
                 }
